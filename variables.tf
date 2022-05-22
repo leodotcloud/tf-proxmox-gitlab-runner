@@ -14,7 +14,7 @@ variable "proxmox_api_token_secret" {
   sensitive = true
 }
 
-variable "use_insecure_connection" {
+variable "proxmox_use_insecure_connection" {
   type        = bool
   description = "Ignore self signed certificates"
   default     = false
@@ -47,6 +47,7 @@ variable "ssh_public_key" {
 
 variable "vm_name_prefix" {
   type    = string
+  description = "Prefix should be a valid DNS name. (Note: Do not use _ underscore characters)"
 }
 
 variable "vm_username" {

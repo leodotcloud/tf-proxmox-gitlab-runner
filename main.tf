@@ -59,7 +59,6 @@ resource "proxmox_vm_qemu" "vm" {
       "sudo gitlab-runner restart"
     ]
   }
-
 }
 
 resource "null_resource" "unregister" {
@@ -81,8 +80,4 @@ resource "null_resource" "unregister" {
       "sudo gitlab-runner unregister --all-runners"
     ]
   }
-}
-
-output "ip_address" {
-  value = proxmox_vm_qemu.vm.*.default_ipv4_address
 }
